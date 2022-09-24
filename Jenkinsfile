@@ -4,11 +4,21 @@ pipeline {
     nodejs "NodeJS"
   }
   stages {
-stage('SonarQube Analysis') {
-    def scannerHome = tool 'sonarqube';
-    withSonarQubeEnv() {
-      sh "${scannerHome}/bin/sonar-scanner"
+// stage('SonarQube Analysis') {
+//     def scannerHome = tool 'sonarqube';
+//     withSonarQubeEnv() {
+//       sh "${scannerHome}/bin/sonar-scanner"
+//     }
+//   }
+    stage('SonarQube analysis') {
+      steps {
+        script {
+          // requires SonarQube Scanner 2.8+
+          scannerHome = tool 'sonarqube'
+        }
+        withSonarQubeEnv() {
+          sh "${scannerHome}/bin/sonar-scanner"
+        }
+      }
     }
   }
-  }
-}
