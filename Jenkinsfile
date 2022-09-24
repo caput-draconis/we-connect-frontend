@@ -9,12 +9,13 @@ pipeline {
   // stage('SCM') {
   //   checkout scm
   // }
-  stage('SonarQube Analysis test') {
-    def scannerHome = tool 'sonarqube';
-    withSonarQubeEnv() {
-      sh "${scannerHome}/bin/sonar-scanner"
+    stage('SonarQube analysis') {
+      steps {
+        withSonarQubeEnv('sonarqube') {
+          sh '/Users/ashank661/.jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/sonarqube/bin/sonar-scanner'
+        }
+      }
     }
-  }
 // }
 
 //     stage('Build artifactory') {
