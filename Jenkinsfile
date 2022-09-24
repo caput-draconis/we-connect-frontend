@@ -9,7 +9,7 @@ pipeline {
   stage('SCM') {
     checkout scm
   }
-  stage('SonarQube Analysis') {
+  stage('SonarQube Analysis test') {
     def scannerHome = tool 'sonarqube';
     withSonarQubeEnv() {
       sh "${scannerHome}/bin/sonar-scanner"
