@@ -3,12 +3,15 @@ pipeline {
   tools {
     nodejs "NodeJS"
   }
+    triggers {
+    githubPush()
+  }
 
   stages {
   //   node {
-  // stage('SCM') {
-  //   checkout scm
-  // }
+  stage('SCM') {
+    checkout scm
+  }
     stage('SonarQube analysis') {
       steps {
         withSonarQubeEnv('sonarqube') {
