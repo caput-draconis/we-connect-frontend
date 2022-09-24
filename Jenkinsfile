@@ -4,10 +4,11 @@ pipeline {
     nodejs "NodeJS"
   }
   stages {
-    stage('update') {
-        steps{
-          sh 'echo hi'
-      }
+stage('SonarQube Analysis') {
+    def scannerHome = tool 'sonarqube';
+    withSonarQubeEnv() {
+      sh "${scannerHome}/bin/sonar-scanner"
     }
+  }
   }
 }
