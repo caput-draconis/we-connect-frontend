@@ -4,9 +4,9 @@ pipeline {
     nodejs "NodeJS"
   }
   stages {
-    stage('test') {
+    stage('update') {
         steps{
-          sh 'echo foo'
+          sh 'echo hi'
       }
     }
   }
