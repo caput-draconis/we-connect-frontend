@@ -42,6 +42,7 @@ pipeline {
     }
         stage('Deploy to production') {
       steps {
+        input message: 'Push to prod? (Click "Proceed" to continue)'
         sh 'rm -rf /Users/ashank661/Desktop/apache-tomcat-10.0.22-production/webapps/we-connect-frontend/*'
         sh 'scp -r build/* /Users/ashank661/Desktop/apache-tomcat-10.0.22-production/webapps/we-connect-frontend/'
       }
