@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://127.0.0.1:8000",
+  "homepage": "we-connect-frontend",
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",

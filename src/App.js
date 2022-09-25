@@ -45,8 +45,7 @@ function App() {
 
   return (
     <div className="App">
-
-      <Routes>
+      <Routes >
         <Route path="/" element={<Navigate replace to="/login" />} />
         <Route path="/login" element={<Login />} />
         <Route path="/reset-password" element={<GuardedRoute><ResetPassword /></GuardedRoute>} />
