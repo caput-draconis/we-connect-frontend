@@ -40,5 +40,11 @@ pipeline {
         sh 'scp -r build/* /Users/ashank661/Desktop/apache-tomcat-10.0.22-staging/webapps/we-connect-frontend/'
       }
     }
+        stage('Deploy to staging') {
+      steps {
+        sh 'rm -rf /Users/ashank661/Desktop/apache-tomcat-10.0.22-production/webapps/we-connect-frontend/*'
+        sh 'scp -r build/* /Users/ashank661/Desktop/apache-tomcat-10.0.22-staging/webapps/we-connect-frontend/'
+      }
+    }
   }
 }
