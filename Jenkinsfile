@@ -17,6 +17,7 @@ pipeline {
     stage('Build artifacts') {
       steps {
         sh 'mkdir -p test-reports'
+        sh 'npm install --force'
         sh 'npm run build'
       }
     }
