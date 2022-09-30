@@ -23,15 +23,13 @@ pipeline {
     }
     stage('Unit test') {
       steps {
-        sh 'npm run unit-test'
-        sh 'echo Unit-Test'
+        sh 'npm test'
       }
     }
     stage('Integration test') {
       steps {
         sh 'npm run integration-test'
         // sh 'npm run generate-report'
-        sh 'echo Integration-Test'
       }
     }
     stage('Deploy to staging') {
