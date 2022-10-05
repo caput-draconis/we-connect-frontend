@@ -1,6 +1,6 @@
 {
   "name": "we-connect",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "proxy": "http://127.0.0.1:8000",
   "homepage": "we-connect-frontend",
@@ -22,6 +22,7 @@
     "cucumber": "^6.0.7",
     "date-fns": "^2.29.2",
     "expect": "^29.0.3",
+    "g": "^2.0.1",
     "gapi-script": "^1.2.0",
     "material-ui": "^0.15.0",
     "moment": "^2.29.4",
@@ -52,6 +53,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --coverage --watchAll=false || cd .",
     "eject": "react-scripts eject",
+    "unit-test": "jest --env=jsdom",
     "integration-test": "cucumber-js || cd ."
   },
   "eslintConfig": {

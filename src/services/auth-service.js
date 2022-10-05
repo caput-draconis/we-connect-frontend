@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const authHost = 'http://127.0.0.1:8000/auth';
-// const authHost = 'http://localhost/auth';
+// const authHost = 'http://127.0.0.1:8000/auth';
+const authHost = 'http://localhost/auth';
 
 export function login(loginDetails) {
     console.log(loginDetails);
